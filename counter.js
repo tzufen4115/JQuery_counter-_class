@@ -17,11 +17,11 @@ $('document').ready(function(){
 
         if(windowTop > top){
             $('#test').animate({
-                num:999
+                num:9999
             },{
                 duration:2000,
                 step:(now) => {
-                    $('#test').text(now);
+                    $('#test').text(Math.floor(now));
                 }
             });
         }
