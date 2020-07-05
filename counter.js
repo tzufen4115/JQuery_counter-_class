@@ -10,7 +10,7 @@ $('document').ready(function(){
             
             // 取得元素位移資料
         // jqOffsetGet
-        var offset = $('#test').offset();
+        var offset = $(this).offset();
         var top = offset.top;
         var left = offset.left;
 
@@ -23,9 +23,9 @@ $('document').ready(function(){
         // 取得參數:數字、時間、位移
         // attribute  規定要獲取其值的屬性。
         // 代號 >>> jqatt >變成>  $( selector ).attr( attribute )
-        var number = $('#test').attr('data-counter-number');
-        var time = $('#test').attr('data-counter-time');
-        var offset = $('#test').attr('data-counter-offset');
+        var number = $(this).attr('data-counter-number');
+        var time = $(this).attr('data-counter-time');
+        var offset = $(this).attr('data-counter-offset');
 
         // console.log('數字' + number);
         // console.log('時間' + time);
@@ -35,12 +35,12 @@ $('document').ready(function(){
         // if (條件) {程式}
         // 如果 發生什麼 就...
         if (windowTop > top - offset) {
-            $('#test').animate({
+            $(this).animate({
                 num : number
             }, {
                 duration: parseInt(time),
                 step: (now) => {
-                    $('#test').text(Math.floor(now));
+                    $(this).text(Math.floor(now));
                 }
             });
         }
